@@ -58,6 +58,13 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
+  sector: {
+    position:'absolute',
+    bottom: 0,
+    color: '#ffffff',
+    textAlign: 'center',
+    width: '100%',
+  },
   drawerContainer: {
     backgroundColor: '#000000',
     height: '100%',

@@ -18,40 +18,60 @@ export default class Sector extends React.Component {
           style={styles.backgroundImg}
         />
 
-          <TouchableOpacity style={positions.sAlpha}>
+          <TouchableOpacity style={[positions.sAlpha, positions.box]}>
             <Text style={styles.sector}>Planet</Text>
             <Image
               source={require('../assets/planet-garden.png')}
-              style={styles.backgroundImg}
+              style={positions.planet}
+            />
+            <Image
+              source={require('../assets/interface-planet.png')}
+              style={positions.intface}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={positions.sDelta}>
+          <TouchableOpacity style={[positions.sDelta, positions.box]}>
             <Image
               source={require('../assets/planet-dark.png')}
-              style={styles.backgroundImg}
+              style={positions.planet}
+            />
+            <Image
+              source={require('../assets/interface-planet.png')}
+              style={positions.intface}
             />
             <Text style={styles.sector}>Planet</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={positions.sEpsilon}>
+          <TouchableOpacity style={[positions.sEpsilon, positions.box]}>
             <Image
               source={require('../assets/planet-gas.png')}
-              style={styles.backgroundImg}
+              style={positions.planet}
+            />
+            <Image
+              source={require('../assets/interface-planet.png')}
+              style={positions.intface}
             />
             <Text style={styles.sector}>Planet</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={positions.sGamma}>
+          <TouchableOpacity style={[positions.sGamma, positions.box]}>
             <Image
               source={require('../assets/planet-garden.png')}
-              style={styles.backgroundImg}
+              style={positions.planet}
+            />
+            <Image
+              source={require('../assets/interface-planet.png')}
+              style={positions.intface}
             />
             <Text style={styles.sector}>Planet</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={positions.sSigma}>
+          <TouchableOpacity style={[positions.sSigma, positions.box]}>
             <Image
               source={require('../assets/planet-alien.png')}
-              style={styles.backgroundImg}
+              style={positions.planet}
             />
-            <Text style={positions.sector}>Planet</Text>
+            <Image
+              source={require('../assets/interface-planet.png')}
+              style={positions.intface}
+            />
+            <Text style={styles.sector}>Planet</Text>
           </TouchableOpacity>
 
         <View style={styles.rowly}>
@@ -70,12 +90,30 @@ export default class Sector extends React.Component {
 
 
 const positions = StyleSheet.create({
-  sAlpha: {
+  planet: {
+    width: 65,
+    height: 65,
+    position:'absolute',
+    top: 20,
+    left: 15,
+  },
+  intface: {
+    width: 100,
+    height: 100,
     position: 'absolute',
+    top: 2,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+  box: {
+    position: 'absolute',
+    width: 100,
+    height: 100,
+  },
+  sAlpha: {
     top: '15%',
     left: '25%',
-    width: 50,
-    height: 50,
   },
   sDelta: {
     position: 'absolute',
