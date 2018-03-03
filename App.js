@@ -35,7 +35,6 @@ class HomeScreen extends React.Component {
           source={require('./assets/title-screen.jpg')}
           style={styles.backgroundImg}
         />
-        <SPlanet />
         <View style={styles.rowly}>
 
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>

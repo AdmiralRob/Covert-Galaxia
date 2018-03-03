@@ -5,62 +5,111 @@ import { Constants } from 'expo';
 import styles from '../styles/Styles';
 
 export default class SPlanet extends React.Component {
+  constructor(props) {
+   super(props)
+   }
 
   render() {
     return (
-      <View style={b.planetBox}>
-      <Text>{this.props.message}</Text>
+      <View style={[b.planetBox, this.props.style]}>
+
         <Image
           source={require('../assets/planet-alien.png')}
-          style={b.planetImg}
+          style={[b.planetImg]}
         />
 
-        <View style={b.meter}>
           <Image
-            source={require('../assets/interface-innerring.png')}
-            style={b.resources}
+            source={require('../assets/interface-agent.png')}
+            style={[b.agent, b.icon]}
           />
-        </View>
-        <View style={b.meter}>
           <Image
-            source={require('../assets/interface-outterring.png')}
-            style={b.resources}
+            source={require('../assets/interface-ship.png')}
+            style={[b.ship, b.icon]}
           />
-        </View>
+          <Image
+            source={require('../assets/interface-shipyard.png')}
+            style={[b.shipyard, b.icon]}
+          />
+          <Image
+            source={require('../assets/interface-barracks.png')}
+            style={[b.barracks, b.icon]}
+          />
+          <Image
+            source={require('../assets/interface-conyard.png')}
+            style={[b.conyard, b.icon]}
+          />
 
-        <Text style={b.name}>Planet</Text>
+
+        <Text style={b.name}>{this.props.name}</Text>
+        <Text style={b.economy}>E:{this.props.economy}</Text>
+        <Text style={b.resources}>R:{this.props.resources}</Text>
 
       </View>
     );
   }
+
 }
 
 
 const b = StyleSheet.create({
-  planetImg : {
-      width: "65%",
-      height: "65%",
-      position:'absolute',
-      top: "20%",
-      left: "15%",
-  },
   planetBox : {
     width: 100,
     height: 100,
   },
-  meter : {
-
-  },
-  resources : {
-
-  },
-  economy : {
-
+  planetImg : {
+    width: "70%",
+    height: "70%",
+    position:'absolute',
+    top: "15%",
+    left: "15%",
   },
   name : {
     position: 'absolute',
     bottom: 0,
     textAlign: 'center',
     width: "100%",
+    color: "white",
   },
+  economy : {
+    position: 'absolute',
+    bottom: "18%",
+    right: "15%",
+    textAlign: 'left',
+    color: "white",
+    fontSize: 10,
+  },
+  resources : {
+    position: 'absolute',
+    bottom: "28%",
+    right: "8%",
+    textAlign: 'left',
+    color: "white",
+    fontSize: 10,
+  },
+  icon : {
+    width: "12%",
+    height: "12%",
+    position: 'absolute',
+  },
+  agent : {
+    bottom: "65%",
+    left: "10%",
+  },
+  ship : {
+    bottom: "55%",
+    left: "5%",
+  },
+  shipyard : {
+    bottom: "45%",
+    left: 0,
+  },
+  barracks : {
+    bottom: "35%",
+    left: "5%",
+  },
+  conyard : {
+    bottom: "25%",
+    left: "10%",
+  }
+
 });

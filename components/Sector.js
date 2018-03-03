@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, View, StyleSheet, Image, Button } from 'react-n
 import { Constants } from 'expo';
 
 import styles from '../styles/Styles';
+import SPlanet from './Planet-Sector';
 
 export default class Sector extends React.Component {
 
@@ -19,59 +20,19 @@ export default class Sector extends React.Component {
         />
 
           <TouchableOpacity style={[positions.sAlpha, positions.box]}>
-            <Text style={styles.sector}>Planet</Text>
-            <Image
-              source={require('../assets/planet-garden.png')}
-              style={positions.planet}
-            />
-            <Image
-              source={require('../assets/interface-planet.png')}
-              style={positions.intface}
-            />
+            <SPlanet name="Atraxia" economy="10" resources="5"/>
           </TouchableOpacity>
           <TouchableOpacity style={[positions.sDelta, positions.box]}>
-            <Image
-              source={require('../assets/planet-dark.png')}
-              style={positions.planet}
-            />
-            <Image
-              source={require('../assets/interface-planet.png')}
-              style={positions.intface}
-            />
-            <Text style={styles.sector}>Planet</Text>
+            <SPlanet name="Dylthan" economy="10" resources="5"/>
           </TouchableOpacity>
           <TouchableOpacity style={[positions.sEpsilon, positions.box]}>
-            <Image
-              source={require('../assets/planet-gas.png')}
-              style={positions.planet}
-            />
-            <Image
-              source={require('../assets/interface-planet.png')}
-              style={positions.intface}
-            />
-            <Text style={styles.sector}>Planet</Text>
+            <SPlanet name="Episteen" economy="10" resources="5"/>
           </TouchableOpacity>
           <TouchableOpacity style={[positions.sGamma, positions.box]}>
-            <Image
-              source={require('../assets/planet-garden.png')}
-              style={positions.planet}
-            />
-            <Image
-              source={require('../assets/interface-planet.png')}
-              style={positions.intface}
-            />
-            <Text style={styles.sector}>Planet</Text>
+            <SPlanet name="Gorram" economy="10" resources="5"/>
           </TouchableOpacity>
           <TouchableOpacity style={[positions.sSigma, positions.box]}>
-            <Image
-              source={require('../assets/planet-alien.png')}
-              style={positions.planet}
-            />
-            <Image
-              source={require('../assets/interface-planet.png')}
-              style={positions.intface}
-            />
-            <Text style={styles.sector}>Planet</Text>
+            <SPlanet name="Sssla" economy="10" resources="5"/>
           </TouchableOpacity>
 
         <View style={styles.rowly}>
@@ -88,6 +49,48 @@ export default class Sector extends React.Component {
   }
 }
 
+const planetDB = {
+  Atraxia : {
+    type : "gas",
+    name : "Atraxia",
+    economy : 10,
+    resources : 3,
+    loyalty : "70",
+    side : "enemy"
+  },
+  Dylthan : {
+    type : "garden",
+    name : "Dylthan",
+    economy : 3,
+    resources : 10,
+    loyalty : "90",
+    side : "ally"
+  },
+  Episteen : {
+    type : "garden",
+    name : "Episteen",
+    economy : 7,
+    resources : 6,
+    loyalty : "30",
+    side : "ally"
+  },
+  Gorram : {
+    type : "alien",
+    name : "Gorram",
+    economy : 2,
+    resources : 3,
+    loyalty : "65",
+    side : "enemy"
+  },
+  Sssla : {
+    type : "dark",
+    name : "Sssla",
+    economy : 2,
+    resources : 8,
+    loyalty : "50",
+    side : "neutral"
+  },
+}
 
 const positions = StyleSheet.create({
   planet: {
