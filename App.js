@@ -18,6 +18,7 @@ Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE);
 import styles from './styles/Styles';
 import Galaxy from './components/Galaxy';
 import Sector from './components/Sector';
+import SPlanet from './components/Planet-Sector';
 import Settings from './components/Settings';
 
 // Pure javascript modules available in npm
@@ -34,6 +35,7 @@ class HomeScreen extends React.Component {
           source={require('./assets/title-screen.jpg')}
           style={styles.backgroundImg}
         />
+        <SPlanet />
         <View style={styles.rowly}>
 
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>
