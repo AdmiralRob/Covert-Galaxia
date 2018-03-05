@@ -20,19 +20,19 @@ export default class Sector extends React.Component {
         />
 
           <TouchableOpacity style={[positions.sAlpha, positions.box]}>
-            <SPlanet name="Atraxia" economy="10" resources="5"/>
+            <SPlanet planet="Atraxia"/>
           </TouchableOpacity>
           <TouchableOpacity style={[positions.sDelta, positions.box]}>
-            <SPlanet name="Dylthan" economy="10" resources="5"/>
+            <SPlanet planet="Dylthan" economy="10" resources="5"/>
           </TouchableOpacity>
           <TouchableOpacity style={[positions.sEpsilon, positions.box]}>
-            <SPlanet name="Episteen" economy="10" resources="5"/>
+            <SPlanet planet="Episteen" economy="10" resources="5"/>
           </TouchableOpacity>
           <TouchableOpacity style={[positions.sGamma, positions.box]}>
-            <SPlanet name="Gorram" economy="10" resources="5"/>
+            <SPlanet planet="Gorram" economy="10" resources="5"/>
           </TouchableOpacity>
           <TouchableOpacity style={[positions.sSigma, positions.box]}>
-            <SPlanet name="Sssla" economy="10" resources="5"/>
+            <SPlanet planet="Sssla" economy="10" resources="5"/>
           </TouchableOpacity>
 
         <View style={styles.rowly}>
@@ -49,48 +49,13 @@ export default class Sector extends React.Component {
   }
 }
 
-const planetDB = {
-  Atraxia : {
-    type : "gas",
-    name : "Atraxia",
-    economy : 10,
-    resources : 3,
-    loyalty : "70",
-    side : "enemy"
-  },
-  Dylthan : {
-    type : "garden",
-    name : "Dylthan",
-    economy : 3,
-    resources : 10,
-    loyalty : "90",
-    side : "ally"
-  },
-  Episteen : {
-    type : "garden",
-    name : "Episteen",
-    economy : 7,
-    resources : 6,
-    loyalty : "30",
-    side : "ally"
-  },
-  Gorram : {
-    type : "alien",
-    name : "Gorram",
-    economy : 2,
-    resources : 3,
-    loyalty : "65",
-    side : "enemy"
-  },
-  Sssla : {
-    type : "dark",
-    name : "Sssla",
-    economy : 2,
-    resources : 8,
-    loyalty : "50",
-    side : "neutral"
-  },
+function planDB(inputObj) {
+  var i=0, arr=[];
+  for (var ob in inputObj)
+    arr[i++]=inputObj[ob];
+  return arr;
 }
+
 
 const positions = StyleSheet.create({
   planet: {

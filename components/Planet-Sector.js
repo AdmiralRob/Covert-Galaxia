@@ -4,12 +4,18 @@ import { Constants } from 'expo';
 
 import styles from '../styles/Styles';
 
+
 export default class SPlanet extends React.Component {
+
   constructor(props) {
-   super(props)
-   }
+    super(props)
+  }
 
   render() {
+
+
+    const p = this.props ? planetDB[this.props.planet] : null;
+
     return (
       <View style={[b.planetBox, this.props.style]}>
 
@@ -18,36 +24,81 @@ export default class SPlanet extends React.Component {
           style={[b.planetImg]}
         />
 
-          <Image
-            source={require('../assets/interface-agent.png')}
-            style={[b.agent, b.icon]}
-          />
-          <Image
-            source={require('../assets/interface-ship.png')}
-            style={[b.ship, b.icon]}
-          />
-          <Image
-            source={require('../assets/interface-shipyard.png')}
-            style={[b.shipyard, b.icon]}
-          />
-          <Image
-            source={require('../assets/interface-barracks.png')}
-            style={[b.barracks, b.icon]}
-          />
-          <Image
-            source={require('../assets/interface-conyard.png')}
-            style={[b.conyard, b.icon]}
-          />
+        <Image
+          source={require('../assets/interface-agent.png')}
+          style={[b.agent, b.icon]}
+        />
+        <Image
+          source={require('../assets/interface-ship.png')}
+          style={[b.ship, b.icon]}
+        />
+        <Image
+          source={require('../assets/interface-shipyard.png')}
+          style={[b.shipyard, b.icon]}
+        />
+        <Image
+          source={require('../assets/interface-barracks.png')}
+          style={[b.barracks, b.icon]}
+        />
+        <Image
+          source={require('../assets/interface-conyard.png')}
+          style={[b.conyard, b.icon]}
+        />
 
 
-        <Text style={b.name}>{this.props.name}</Text>
-        <Text style={b.economy}>E:{this.props.economy}</Text>
-        <Text style={b.resources}>R:{this.props.resources}</Text>
+        <Text style={b.name}>{p.name}</Text>
+        <Text style={b.economy}>E:{p.economy}</Text>
+        <Text style={b.resources}>R:{p.resources}</Text>
 
       </View>
     );
   }
 
+}
+
+
+
+const planetDB = {
+  "Atraxia" : {
+    type : "gas",
+    name : "Atraxia",
+    economy : 10,
+    resources : 3,
+    loyalty : "70%",
+    side : "enemy"
+  },
+  "Dylthan" : {
+    type : "garden",
+    name : "Dylthan",
+    economy : 3,
+    resources : 10,
+    loyalty : "90",
+    side : "ally"
+  },
+  "Episteen" : {
+    type : "garden",
+    name : "Episteen",
+    economy : 7,
+    resources : 6,
+    loyalty : "30",
+    side : "ally"
+  },
+  "Gorram" : {
+    type : "alien",
+    name : "Gorram",
+    economy : 2,
+    resources : 3,
+    loyalty : "65",
+    side : "enemy"
+  },
+  "Sssla" : {
+    type : "dark",
+    name : "Sssla",
+    economy : 2,
+    resources : 8,
+    loyalty : "50",
+    side : "neutral"
+  },
 }
 
 
